@@ -1,0 +1,58 @@
+import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
+export default function LoginScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Connexion</Text>
+      <TextInput 
+        style={styles.Input}
+        keyboardType="email-address"
+        placeholder="Adresse e-mail" />
+      <TextInput 
+        style={styles.Input}
+        autoCorrect={false}
+        secureTextEntry={true}
+        textContentType="password"
+        placeholder="Mot de passe" />
+      
+      <TouchableOpacity 
+						onPress={() => navigation.navigate("Modif")}
+						style={{
+							backgroundColor :'#f96163', 
+							padding : 10, width : 190, 
+							alignSelf:'center', marginBottom: 20, 
+							borderRadius: 10,
+							}}>
+							<Text style={{color : 'white', fontSize: 24,textAlign:'center', fontWeight:'bold'}}>Connecter</Text>
+						</TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop : 50,
+    paddingHorizontal : 12
+  },
+  Input : {
+    marginBottom : 20,
+    borderWidth : 1,
+    borderColor : '#333',
+    borderRadius : 8,
+    padding : 12
+  },
+  text : {
+    fontSize : 18,
+    padding : 12,
+    textAlign : 'center'
+  },
+  title : {
+    fontSize : 24,
+    fontWeight : '600',
+    color : '#444',
+    alignSelf : 'center',
+    paddingBottom : 24
+  }
+});
